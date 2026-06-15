@@ -2,21 +2,37 @@ pipeline {
     agent any
 
     stages {
-
         stage('Git Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/aarun627326-gif/CICD-Project.git'
+                git branch: 'main', url: 'https://github.com/aarun627326-gif/CICD-Project.git'
             }
         }
 
-        stage('Test') {
+        stage('Build') {
             steps {
-                bat 'dir'
+                echo 'Build Successful'
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
