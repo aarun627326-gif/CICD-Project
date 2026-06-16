@@ -21,29 +21,18 @@ pipeline {
                 script {
                     def scannerHome = tool 'sonar-scanner'
 
+                    echo "Scanner Home: ${scannerHome}"
+
+                    bat "dir \"${scannerHome}\\bin\""
+
                     withSonarQubeEnv('SonarQube') {
-                        bat "\"${scannerHome}\\bin\\sonar-scanner.bat\" -Dsonar.projectKey=CICD-Project -Dsonar.projectName=CICD-Project -Dsonar.sources=. -Dsonar.sourceEncoding=UTF-8"
+                        bat "\"${scannerHome}\\bin\\sonar-scanner.bat\" --version"
                     }
                 }
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
